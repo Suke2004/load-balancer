@@ -6,8 +6,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/sbirmecha99load-balancer/internal/core"
-	"github.com/sbirmecha99/load-balancer/internal/routing"
+	"github.com/Suke2004/load-balancer/internal/core"
+	"github.com/Suke2004/load-balancer/internal/routing"
 )
 
 type HTTPProxy struct {

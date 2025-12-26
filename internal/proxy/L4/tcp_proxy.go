@@ -5,8 +5,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/sbirmecha99/load_balancer/internal/core"
-	"github.com/sbirmecha99/load_balancer/internal/routing"
+	"github.com/Suke2004/load_balancer/internal/core"
+	"github.com/Suke2004/load_balancer/internal/routing"
 )
 
 type TCPProxy struct {
