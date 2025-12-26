@@ -3,23 +3,24 @@ package core
 import (
 	"sync"
 )
-type ServerPool struct {
-	server []*Backend
-	Mu sync.RWMutex
+
+type ServerPool struct{
+	servers []*Backend
+	mu sync.RWMutex
 }
 
-func NewServerPool() *ServerPool {
+func NewServerPool() *ServerPool{
 	return &ServerPool{}
 }
 
-func (p *ServerPool) AddServer(b *Backend) {
-	p.Mu.Lock()
-	defer p.Mu.Unlock()
-	p.server = append(p.server, b)
+func (p *ServerPool) AddServer(b *Backend){
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	p.servers=append(p.servers, b)
 }
 
 func (p *ServerPool) GetServers() []*Backend{
-	p.Mu.RLock()
-	defer p.Mu.RUnlock()
-	return p.server
+	p.mu.RLock()
+	defer p.mu.RUnlock()
+	return p.servers
 }
