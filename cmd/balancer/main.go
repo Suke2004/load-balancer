@@ -68,7 +68,7 @@ func main() {
 	// --------------------------------------------------
 	// Health checker
 	// --------------------------------------------------
-	checker := &health.Checker{
+	checker := &health.HealthChecker{
 		Pool:     pool,
 		Interval: 5 * time.Second,
 		Timeout:  2 * time.Second,

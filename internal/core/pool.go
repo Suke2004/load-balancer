@@ -18,7 +18,7 @@ func (p *ServerPool) AddServer(b *Backend) {
 	p.server = append(p.server, b)
 }
 
-func (p *ServerPool) GetServers() []*Backend {
+func (p *ServerPool) GetServers() []*Backend{
 	p.Mu.RLock()
 	defer p.Mu.RUnlock()
 	return p.server

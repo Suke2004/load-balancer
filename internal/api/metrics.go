@@ -8,8 +8,8 @@ import (
 )
 
 
-func MetricsHandler(pool *core.Backend) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request){
+func MetricsHandler(pool []*core.Backend) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(pool)
 	}
 }
