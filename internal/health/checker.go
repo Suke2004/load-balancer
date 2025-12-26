@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/Suke2004/load_balancer/internal/core"
+	"github.com/Suke2004/load-balancer/internal/core"
 )
 
 type HealthChecker struct {

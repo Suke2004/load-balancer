@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/Suke2004/load_balancer/internal/core"
-	"github.com/Suke2004/load_balancer/internal/routing"
+	"github.com/Suke2004/load-balancer/internal/core"
+	"github.com/Suke2004/load-balancer/internal/routing"
 )
 
 type StatusResponse struct {

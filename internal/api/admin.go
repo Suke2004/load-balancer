@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/Suke2004/load_balancer/internal/core"
+	"github.com/Suke2004/load-balancer/internal/core"
 )
 
 func AddServerHandler(pool *core.ServerPool) http.HandlerFunc {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/Suke2004/load_balancer/internal/core"
+	"github.com/Suke2004/load-balancer/internal/core"
 )
 
 type RoundRobinRouter struct {
