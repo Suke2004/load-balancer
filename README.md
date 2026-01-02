@@ -1,115 +1,101 @@
+Here are the two separate files. I have standardized the second file as `CONTRIBUTING.md`, as this is the filename GitHub automatically recognizes and displays to users when they open a Pull Request.
+
+### 1. `README.md`
+
+This file is the face of your project. Copy the content below into your root `README.md` file.
+
+```markdown
 # Smart Adaptive Load Balancer
 
-A high-performance, intelligent load balancer built in **Go (Golang)**. This project is designed to efficiently distribute incoming network traffic across multiple backend servers, ensuring high availability and reliability. It features an adaptive algorithm that monitors server health and load to make smart routing decisions, coupled with a real-time dashboard for monitoring.
+![Go Version](https://img.shields.io/github/go-mod/go-version/Suke2004/load-balancer)
+![License](https://img.shields.io/github/license/Suke2004/load-balancer)
+![Issues](https://img.shields.io/github/issues/Suke2004/load-balancer)
+![Pull Requests](https://img.shields.io/github/issues-pr/Suke2004/load-balancer)
 
-## 🚀 Features
+A high-performance, intelligent Layer 7 load balancer written in **Go**. This project aims to distribute network traffic across backend servers efficiently using adaptive algorithms, ensuring high availability and fault tolerance. It comes equipped with a real-time monitoring dashboard to visualize cluster health.
 
-* **⚡ High Performance**: Built with Go's lightweight concurrency model (Goroutines) to handle high throughput with low latency.
-* **🧠 Adaptive Balancing**: Routes traffic based on real-time server metrics (response time, active connections) rather than just static round-robin.
-* **💓 Active Health Checks**: Periodically probes backend servers to ensure they are alive. Unhealthy servers are automatically removed from the pool; healthy ones are reintegrated.
-* **📊 Real-time Dashboard**: Includes a web-based dashboard (located in `dashboard/`) to visualize cluster status, request rates, and server health.
-* **🛡️ Fault Tolerance**: Graceful error handling and retry mechanisms.
+## 🚀 Key Features
 
-## 📂 Project Structure
+* **Adaptive Routing:** Intelligently routes traffic based on server load, response time, and active connections.
+* **Active Health Checks:** Automatically detects unhealthy backends and removes them from the pool until they recover.
+* **Concurrency:** Built on Go's goroutines to handle thousands of concurrent requests with minimal footprint.
+* **Visual Dashboard:** A web-based interface (located in `dashboard/`) to monitor traffic flow and server status in real-time.
+* **Configurable:** Easy-to-adjust settings for ports, timeouts, and backend pools.
 
-```bash
+## 📂 Repository Structure
+
+```text
 .
 ├── cmd/
 │   └── balancer/    # Application entry point (main.go)
-├── dashboard/       # Frontend code for the monitoring dashboard
-├── internal/        # Core application logic (algorithms, health checks, stats)
+├── dashboard/       # Frontend dashboard code
+├── internal/        # Core logic (Balancing algorithms, Health checks)
 ├── go.mod           # Go module definitions
-└── go.sum           # Checksums for dependencies
+└── go.sum           # Dependency checksums
 
 ```
 
-## 🛠️ Prerequisites
+## 🛠️ Getting Started
 
-Before running the load balancer, ensure you have the following installed:
+### Prerequisites
 
-* **[Go](https://golang.org/dl/)** (Version 1.20 or higher)
-* **Git**
+* [Go 1.20+](https://golang.org/dl/)
+* Git
 
-## 📥 Installation
+### Installation
 
-1. **Clone the repository:**
+1. **Clone the repository**
 ```bash
-git clone https://github.com/Suke2004/load-balancer.git
+git clone [https://github.com/Suke2004/load-balancer.git](https://github.com/Suke2004/load-balancer.git)
 cd load-balancer
 
 ```
 
 
-2. **Install dependencies:**
+2. **Install dependencies**
 ```bash
 go mod download
 
 ```
 
 
-
-## ⚙️ Configuration
-
-*Note: If the project uses a configuration file (e.g., `config.json` or `config.yaml`), ensure it is created in the root directory or inside `cmd/balancer`. A typical configuration might look like this:*
-
-```json
-{
-  "port": 8000,
-  "backends": [
-    "http://localhost:8081",
-    "http://localhost:8082",
-    "http://localhost:8083"
-  ],
-  "health_check_interval": "10s",
-  "strategy": "adaptive"
-}
-
-```
-
-## 🏃 Usage
-
-To start the load balancer:
-
+3. **Run the Load Balancer**
 ```bash
 go run cmd/balancer/main.go
 
 ```
 
-Once running, the load balancer will start listening on the configured port (default is usually `8080` or `8000`).
 
-### Accessing the Dashboard
 
-The dashboard frontend is located in the `dashboard/` folder. Depending on the implementation, it may be served automatically by the Go binary or require a separate start.
+The server should start on the default port (e.g., `8080`). You can verify it is running by sending a request to localhost or opening the dashboard URL provided in the terminal logs.
 
-If it requires a separate build (e.g., if it's a React/Vue app), navigate to the folder and follow the frontend instructions. Otherwise, visit:
+## ⚙️ Configuration
 
-`http://localhost:<PORT>/dashboard` (or the specific URL printed in your console).
+Configuration can usually be modified via flags or a config file (depending on implementation details). Common settings to look for in `main.go`:
 
-## 🧪 Testing
+* **Port:** Listening port for the balancer.
+* **Backends:** List of target servers.
+* **Strategy:** Round Robin, Least Connections, or Weighted.
 
-To run the internal unit tests:
+## 🧪 Running Tests
+
+To run the unit tests for the internal packages:
 
 ```bash
-go test ./internal/...
+go test -v ./internal/...
 
 ```
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+We welcome contributions! Please read our [CONTRIBUTING.md](https://www.google.com/search?q=CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is licensed under the MIT License - see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
 
 ---
 
 <p align="center">
-Built with ❤️ by <a href="[https://github.com/Suke2004](https://www.google.com/search?q=https://github.com/Suke2004)">Suke2004</a>
+Created by <a href="https://www.google.com/search?q=https://github.com/Suke2004">Suke2004</a>
 </p>
